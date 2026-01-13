@@ -1,0 +1,202 @@
+/* Background animated gradient */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Page title */
+.page-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    color: #d43f5e;
+    text-align: center;
+    margin-top: 30px;
+    z-index: 2;
+    position: relative;
+}
+
+/* Center card */
+.container {
+    position: relative;
+    margin-top: 200px;
+    z-index: 2;
+    background: rgba(255,255,255,0.85);
+    padding: 40px 30px;
+    border-radius: 25px;
+    max-width: 90%;
+    width: 450px;
+    text-align: center;
+    transform: rotate(-2deg);
+    /* Magical glow */
+    box-shadow: 0 0 30px rgba(255,105,180,0.6), 0 0 60px rgba(255,105,180,0.4) inset;
+}
+
+/* Floating hearts inside card */
+#cardHearts {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 1;
+}
+
+.card-heart {
+    position: absolute;
+    font-size: 15px;
+    pointer-events: none;
+    animation: floatHeart 5s linear forwards;
+}
+
+@keyframes floatHeart {
+    0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-120px) scale(1.2) rotate(360deg); opacity: 0; }
+}
+
+/* Poem font */
+.poem-line {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: #d43f5e;
+    margin: 8px 0;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    position: relative;
+    z-index: 2;
+}
+
+/* Question and buttons */
+.question {
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    color: #d43f5e;
+    margin: 20px 0;
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.buttons { opacity: 0; position: relative; z-index: 2; }
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+/* Yes button */
+#yesBtn { background: #ff4d6d; color: white; }
+#yesBtn:hover { transform: scale(1.1); box-shadow: 0 0 15px #ff99cc; }
+
+/* No button */
+#noBtn { background: #a0a0a0; color: white; }
+#noBtn:hover { transform: scale(1.1); box-shadow: 0 0 15px #ccc; }
+
+/* Response */
+#response {
+    font-size: 22px;
+    color: #ff4d6d;
+    margin-top: 15px;
+}
+
+/* Canvas for hearts */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Bottom corner buttons */
+#bottomButtons {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 3;
+}
+
+/* Music button */
+#musicBtn.music {
+    font-size: 28px;
+    padding: 10px 12px;
+    border-radius: 50%;
+    background: #ffcc66;
+    border: 2px solid #ffa500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#musicBtn.music:hover { transform: scale(1.2); box-shadow: 0 0 10px #ffa500; }
+
+/* Secret envelope */
+#secretBtn.envelope {
+    font-size: 28px;
+    padding: 10px 12px;
+    border-radius: 50%;
+    background: #ff99cc;
+    border: 2px solid #ff4d6d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: wiggle 3s infinite;
+}
+#secretBtn.envelope:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 0 10px #ff4d6d;
+}
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+}
+
+/* Secret message */
+#secretMsg {
+    font-family: 'Dancing Script', cursive;
+    color: rgb(46, 9, 27);
+    font-size: 22px;
+    margin-bottom: 5px;
+    display: none;
+    text-align: center;
+}
+@keyframes pop {
+    0% { transform: scale(0);}
+    50% { transform: scale(1.2);}
+    100% { transform: scale(1);}
+}
+#secretMsg.show {
+    display: block !important;
+    animation: pop 0.6s ease-in-out;
+}
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+    .page-title { font-size: 32px; }
+    .container { width: 90%; padding: 30px 20px; }
+    .poem-line { font-size: 18px; }
+    .question { font-size: 20px; }
+    button { padding: 16px 24px; font-size: 16px; }
+}

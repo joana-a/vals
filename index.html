@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    
+    <!-- Google Fonts for cursive -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas for background hearts and confetti -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Page title -->
+    <h1 class="page-title"> Big Daddy G!💖</h1>
+
+    <!-- Poem card -->
+    <div class="container">
+        <!-- Floating hearts inside card -->
+        <div id="cardHearts"></div>
+
+        <!-- Poem -->
+        <div class="poem">
+            <p class="poem-line">Like a song I can’t forget,</p>
+            <p class="poem-line">you play softly beneath every thought I have.</p>
+            <p class="poem-line">Something about you...us...feels promising,</p>
+            <p class="poem-line">like the start of a favourite story. 💕</p>
+            <p class="poem-line">so...</p>
+            <p class="poem-line">I'd love one chapter called VALENTINE'S DAY -- with you</p>
+        </div>
+
+        <!-- Question -->
+        <p class="question" id="question">what do you say? </p>
+        
+
+        <!-- Buttons -->
+        <div class="buttons" id="buttons">
+            <button id="yesBtn">Yes!</button>
+            <button id="noBtn">No (i hate you)</button>
+        </div>
+
+        <!-- Response -->
+        <p id="response" style="display:none;"></p>
+    </div>
+
+    <!-- Bottom corner buttons -->
+    <div id="bottomButtons">
+        <button id="musicBtn" class="music">🎵</button>
+        <div id="secretContainer">
+            <p id="secretMsg"></p>
+            <button id="secretBtn" class="envelope">💌</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
