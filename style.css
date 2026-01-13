@@ -33,7 +33,7 @@ body {
 /* Center card */
 .container {
     position: relative;
-    margin-top: 200px;
+    margin-top: 80px;
     z-index: 2;
     background: rgba(255,255,255,0.85);
     padding: 40px 30px;
